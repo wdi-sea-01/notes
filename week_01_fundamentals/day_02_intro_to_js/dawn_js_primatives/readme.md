@@ -65,8 +65,7 @@ Strings are collections of letters and symbols known as **Characters**, and we u
 
 ## Booleans
 
-Strings are a type that can only have one of two values.
-true or false.
+Strings are a type that can only have one of two values: true or false.
 
 ```
 true
