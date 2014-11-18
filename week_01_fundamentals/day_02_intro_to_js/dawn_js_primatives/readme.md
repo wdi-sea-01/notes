@@ -1,14 +1,6 @@
 # Javascript Primitives
 ## Intro to Programming fundamentals
 
-
-## Objectives
-
-| Objectives |
-| :----- |
-| To manipulate datatypes and create expressions in JS |
-
-
 ## Agenda
 * History of Javascript
 * Comments
