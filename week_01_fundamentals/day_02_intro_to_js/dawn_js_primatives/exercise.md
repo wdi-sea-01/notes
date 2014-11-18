@@ -99,7 +99,7 @@ var foods = [
 
 8.) My friends want to know what my `5`th to `10`th favorite foods are.
 
-9.) How would you create an array that efficiently stored the following information:
+9.) How would you create an object that efficiently stored the following information:
 
 ```
   'Moe' is 18
