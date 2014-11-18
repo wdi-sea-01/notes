@@ -1,7 +1,6 @@
 # Javascript Primitives
-## Intro to Programming fundamentals
 
-## Agenda
+## Intro to Programming fundamentals
 * History of Javascript
 * Comments
 * Understand Data Types
