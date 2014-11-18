@@ -10,17 +10,17 @@
 
 
 ## Agenda
-* Brainstorm (Ruby v. Javascript)
 * History of Javascript
+* Comments
 * Understand Data Types
-  * Comments
   * Numbers
   * Strings
+  * Booleans
   * Values & Expressions
   * Objects everywhere
+  * Collections
     * Arrays
     * Objects
-  * Conditionals
   * Reference Types
   * Undefined
   * False
@@ -70,6 +70,16 @@ Strings are collections of letters and symbols known as **Characters**, and we u
 
 ```
 "John", "Jane"
+```
+
+## Booleans
+
+Strings are a type that can only have one of two values.
+true or false.
+
+```
+true
+false
 ```
 
 ## Values and Expressions
@@ -151,6 +161,7 @@ var myString = "Greetings y'all!"
 
 The main note to make here is that these variables should always have the `var` keyword and use `camelCase`
 
+
 ## Objects Everywhere
 
 In Javascript we just discussed two types of values we can use. We call these values objects, which for now just means that in addition to storing some data you also get to use some helpful methods when you are working with them.
@@ -158,19 +169,19 @@ In Javascript we just discussed two types of values we can use. We call these va
 * If you want to turn a number into a string you can use a helpful method called `toString`.
 
 ```
-(1).toString()
+myNumber.toString()
 => "1"
-/**
-  be careful though,
-  since numbers can be floats
-  javascript might
-  misunderstand you.
-*/
-1.toString()
-=> Float Error
-// but the following works
-1..toString()
 ```
+
+
+### Common String / Number methods
+
+* Numbers
+  * `.toString`, `.toFixed`
+* Strings
+  * `.split`, `.join`, `.indexOf`, `.toUpperCase`, `.toLowerCase`, `.replace`
+  
+
 
 ### Arrays
 
@@ -230,7 +241,7 @@ Add your name to the end of the `friends` and add another name to beginning. Cha
 var ages = [83, 53, 37, 29, 60, 30, 66, 19, 59, 41, 9, 64, 19, 80, 24, 53, 70, 1, 53, 40, 92, 4, 71, 65, 8, 2, 51, 80, 94, 37, 80, 64, 19, 6, 14];
 
 ```
-find the `median` age.
+find the `average` age.
 
 4.) There are a list of names in a string, below. How could we sort them? Hint: use string and array methods.
 
@@ -332,7 +343,7 @@ Why use objects to store `key` and `value` pairs? They are like arrays except th
 
 
 ```
-var friend = {name: "john"}
+var friend = {firstName: "Jane", lastName: "Doe"}
 
 ```
 
@@ -340,7 +351,11 @@ var friend = {name: "john"}
 
 
 ```
-friend[name]
+friend.firstName
+friend.lastName
+
+friend['firstName']
+friend['lastName']
 ```
 
 ### Exercise
@@ -375,14 +390,16 @@ John, Doe, 36, 1234 Park st.
 
 ```
 
-### RegEx
+### Array Methods
 
-### Convenient Methods
+`.pop`, `.push`, `.shift`, `.unshift`, `.concat`, `.slice`, `splice`, `.reverse`
 
-* Strings
-  * `split`, `join`
-* Arrays
-  * `.pop`, `.push`, `.concat`, `.slice`, `.reverse`
+
+### Reference
+
+[Values, variables, and literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals)
+
+[re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 
 
 
