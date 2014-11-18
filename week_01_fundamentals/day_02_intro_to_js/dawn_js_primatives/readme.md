@@ -8,6 +8,7 @@
   * Strings
   * Booleans
   * Values & Expressions
+  * Variables
   * Objects everywhere
   * Collections
     * Arrays
@@ -200,6 +201,76 @@ var lastFriend = friends[2]
 => 'Curly'
 ```
 
+### Objects
+
+Why use objects to store `key` and `value` pairs? They are like arrays except that  data is not stored in any sorted order and keys do not have to numbered indexes.
+
+
+#### creating
+
+
+```
+var friend = {firstName: "Jane", lastName: "Doe"}
+
+```
+
+#### accessing
+
+
+```
+friend.firstName
+friend.lastName
+
+friend['firstName']
+friend['lastName']
+```
+
+### Exercise
+
+
+1.) How would you represent the following using and object literal. Then update `john's` address to `1234 Park ln`.
+
+````
+
+John, Doe, 36, 1234 Park st.
+
+````
+**(Hint: think in terms of firstname, lastname, age, address)**
+
+
+2.) Using a combination of Objects and Array, how would you represent the following:
+
+
+```
+  Moe, Doe, 31, 1234 Park st.
+  Larry, Doe, 36, 1234 Spark st.
+  Curly, Doe, 36, 1239 Park st.
+  Jane, Doe, 32, 1239 Spark st.
+  Emma, Doe, 34, 1235 Spark st.
+  Elizabeth, Doe, 36, 1234 Park st.
+  Elinor, Doe, 35, 1230 Park st.
+  Mary, Doe, 31, 1231 Park st.
+  Darcy, Doe, 32, 1224 Park st.
+  Grey, Doe, 34, 1214 Park st.
+  Lydia, Doe, 30, 1294 Park st.
+  Harriet, Doe, 32, 1324 Park st.
+
+```
+
+### Array Methods
+
+`.pop`, `.push`, `.shift`, `.unshift`, `.concat`, `.slice`, `splice`, `.reverse`
+
+
+### Reference
+
+[Values, variables, and literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals)
+
+[re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+
+
+
+
 ### Exercises
 
 1.) Find the last name in the following array:
@@ -323,76 +394,6 @@ var ages = [83, 53, 37, 29, 60, 30, 66, 19, 59, 41, 9, 64, 19, 80, 24, 53, 70, 1
 
 ```
 find the `median` age.
-
-### Objects
-
-Why use objects to store `key` and `value` pairs? They are like arrays except that  data is not stored in any sorted order and keys do not have to numbered indexes.
-
-
-#### creating
-
-
-```
-var friend = {firstName: "Jane", lastName: "Doe"}
-
-```
-
-#### accessing
-
-
-```
-friend.firstName
-friend.lastName
-
-friend['firstName']
-friend['lastName']
-```
-
-### Exercise
-
-
-1.) How would you represent the following using and object literal. Then update `john's` address to `1234 Park ln`.
-
-````
-
-John, Doe, 36, 1234 Park st.
-
-````
-**(Hint: think in terms of firstname, lastname, age, address)**
-
-
-2.) Using a combination of Objects and Array, how would you represent the following:
-
-
-```
-  Moe, Doe, 31, 1234 Park st.
-  Larry, Doe, 36, 1234 Spark st.
-  Curly, Doe, 36, 1239 Park st.
-  Jane, Doe, 32, 1239 Spark st.
-  Emma, Doe, 34, 1235 Spark st.
-  Elizabeth, Doe, 36, 1234 Park st.
-  Elinor, Doe, 35, 1230 Park st.
-  Mary, Doe, 31, 1231 Park st.
-  Darcy, Doe, 32, 1224 Park st.
-  Grey, Doe, 34, 1214 Park st.
-  Lydia, Doe, 30, 1294 Park st.
-  Harriet, Doe, 32, 1324 Park st.
-
-```
-
-### Array Methods
-
-`.pop`, `.push`, `.shift`, `.unshift`, `.concat`, `.slice`, `splice`, `.reverse`
-
-
-### Reference
-
-[Values, variables, and literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Values,_variables,_and_literals)
-
-[re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-
-
-
 
 
 
