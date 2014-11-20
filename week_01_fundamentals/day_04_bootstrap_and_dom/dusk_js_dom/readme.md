@@ -17,74 +17,89 @@ Go to Developer Console. Look at DOM in *Elements*, then look at the DOM in *Con
 
 Google "DOM document api", pick the MDN documentation. Inspect a few properties, for example:
 
-  document.URL
-  document.head
-  document.links (what does it return?)
+```
+document.URL
+document.head
+document.links (what does it return?)
+```
 
 How to change the DOM? Select elements and manipulate them.
 
 **Select by tag id:**
 
-  var greeting_div = document.getElementById("greeting");
-
+```
+var greeting_div = document.getElementById("greeting");
+```
 What's the greeting?
 
-  greeting_div.innerHTML
+```	
+greeting_div.innerHTML
+```
 
 Change it:
 
-  greeting_div.innerHTML = "Wow, something changed."
+```
+greeting_div.innerHTML = "Wow, something changed."
+```
 
 Change styling:
 
-  greeting_div.style.backgroundColor = "yellow"
-  greeting_div.style.color = "red"
-  greeting_div.style.height = "100px"
-  etc.
+```
+greeting_div.style.backgroundColor = "yellow"
+greeting_div.style.color = "red"
+greeting_div.style.height = "100px"
+```
 
 
+	
 Properties can be a getter and setter. What does this mean?
 
 **Select by class**
 
-  var content_div = document.getElementsByClassName("content");
+```
+var content_div = document.getElementsByClassName("content");
+```
 
 Change it:
 
-  content_div.innerHTML = "I can change,too";
-
+```	
+content_div.innerHTML = "I can change,too";
+```
 
 
 **Select by tag name**
 
-  all_li_elems = document.getElementsByTagName("li")
-
+```
+all_li_elems = document.getElementsByTagName("li")
+```
 **Preferred: select using CSS selectors**
-
+	
 Get elements by tag name or class is very unspecific. You can go after specific CSS selectors, just like you would in stylesheets:
 
-  document.querySelectorAll("li")
-  document.querySelectorAll("li.selected")
-  document.querySelectorAll("div#essentials > ul > li")
-
+```
+document.querySelectorAll("li")
+document.querySelectorAll("li.selected")
+document.querySelectorAll("div#essentials > ul > li")
+```
 
 **Accessing and changing element attributes**
 
-  document.querySelector("img").getAttribute("src")
-  document.querySelector("img").setAttribute("src","./images/beer.jpeg")
-
+```
+document.querySelector("img").getAttribute("src")
+document.querySelector("img").setAttribute("src","./images/beer.jpeg")
+```
 ##Events
 
 Now that we know how to select DOM elements, we can attach events to them:
 
 - Common Events:
-  - change
-  - click
-  - mouseover
-  - mouseout
-  - keydown
-  - keyup
-
+	- change
+	- click
+	- mouseover
+	- mouseout
+	- keydown
+	- keyup
+	
 * [List of Event Types](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 #####"Shortcut" Method
@@ -107,7 +122,7 @@ Also this is the style you should use often.
 
 ```
 document.getElementById("myDiv").addEventListener("click", function() {
-  //Your code here
+	//Your code here
 }
 ```
 
@@ -115,7 +130,7 @@ Events can only be attached to specific elements. Therefore, when you return a c
 
 ```
 document.querySelectorAll(".li").addEventListener("click", function() {
-  console.log("Click worked");
+	console.log("Click worked");
 }
 ```
 
