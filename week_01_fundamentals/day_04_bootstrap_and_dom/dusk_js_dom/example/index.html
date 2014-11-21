@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Company Logo</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li>
+						<div class="navbar-form" role="search">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search" name="srch-term" id="searchText">
+								<div class="input-group-btn">
+									<button class="btn btn-default" id="doTheSearch"><i class="glyphicon glyphicon-search"></i></button>
+								</div>
+							</div>
+						</div>						
+					</li>
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div><!--/.container-fluid -->
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ol class="breadcrumb" id="bread">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+				</ol>
+				<h3>Products. <small>We build amazing stuff.</small></h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<img src="http://placekitten.com/g/300/200">
+				<h4>Product one</h4>
+				<p>This is an awesome product one description. This is an awesome product one description</p>
+                <div class="text-center">
+				    <button class="btn btn-primary">Learn More</button>
+                </div>
+			</div>
+			<div class="col-md-4">
+				<img src="http://placekitten.com/g/300/200">
+				<h4>Product two</h4>
+				<p>This is an awesome product one description</p>
+				<button class="btn btn-primary center-block">Learn More</button>
+			</div>
+			<div class="col-md-4">
+				<img src="http://placekitten.com/g/300/200">
+				<h4>Product three</h4>
+				<p>This is an awesome product one description. This is an awesome product one description. This is an awesome product one description</p>
+				<button class="btn btn-primary">Learn More</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<hr>
+				<p>Wanna get in touch? Email us at office@awesomeproduct.com</p>
+				<hr>
+				<img src="footer.png">
+			</div>
+		</div>		
+	</div>
+</body>
+</html>
