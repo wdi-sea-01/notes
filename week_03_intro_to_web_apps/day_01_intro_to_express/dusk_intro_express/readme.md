@@ -128,7 +128,7 @@ var express = require('express'),
   app = express();
 
 // tell your app to use the module
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.get('/', function(req, res){
   // use a render
@@ -152,7 +152,7 @@ var express = require('express'),
   app = express();
 
 // tell your app to use the module
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.set('view engine', 'ejs');
 
