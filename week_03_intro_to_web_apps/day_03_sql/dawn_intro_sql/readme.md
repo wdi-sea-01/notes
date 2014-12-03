@@ -185,7 +185,7 @@ CREATE TABLE students (
 INSERT INTO students 
 (name, phone, email) 
 VALUES 
-('Mary Wilson', '(510)-555-5555', 'bob@example.com');
+('Bob Jones', '(510)-555-5555', 'bob@example.com');
 
 ```
 
@@ -209,7 +209,7 @@ UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 
 ```
 
-DELETE from students WHERE name = 'Mary';
+DELETE from students WHERE name = 'Bob Jones';
 
 ```
 
@@ -234,34 +234,43 @@ ALTER TABLE _____ ADD CONSTRAINT something_fk FOREIGN KEY (____) REFERENCES ____
 - ALWAYS ALWAYS USE ''
 
 ### Start by creating a table
-
+```
 CREATE TABLE students(student_id SERIAL PRIMARY KEY, name VARCHAR(100), age INTEGER);
+```
 
 Different data types, VARCHAR, TEXT, FLOAT, INTEGER, PG even stores arrays and json!
 
 ## Add a student
 
+```
 INSERT INTO students (name,age) VALUES ('John',30);
+```
 
 ## Find the student
 
+```
 SELECT * FROM students;
 SELECT age FROM students;
 SELECT name FROM students;
+```
 
 ## Find a student more:
 
+```
 SELECT * (or columns separated by comma) FROM students WHERE _____;
 
 SELECT * FROM students WHERE age < 33;
+```
 
 ## Update a student
-
+```
 UPDATE students  SET name = 'Tom' WHERE name = 'Bob';
+```
 
 ## Delete a student
-
+```
 DELETE FROM students WHERE name = 'Tom';
+```
 
 ## Selecting specific data
 
@@ -283,7 +292,7 @@ Not equal - <>
 
 # Joins and FK
 
-
+```
 CREATE TABLE books (book_id SERIAL PRIMARY KEY, name VARCHAR(100), authorId INTEGER);
 CREATE TABLE authors (author_id SERIAL PRIMARY KEY, name VARCHAR(100));
 
@@ -302,7 +311,7 @@ ALTER TABLE books ADD CONSTRAINT author_fk FOREIGN KEY (authorId) REFERENCES aut
 ALTER TABLE books ADD COLUMN author_id INTEGER;
 
 ALTER TABLE books ADD CONSTRAINT name_of_fk FOREIGN KEY (keyInTable) REFERENCES tableName (id) ON DELETE NO ACTION;
-
+```
 
 
 
