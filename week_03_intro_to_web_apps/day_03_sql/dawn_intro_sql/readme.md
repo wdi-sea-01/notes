@@ -118,7 +118,7 @@ Once we connect, our command prompt should look similar to this: ```testdb=#```
 List our tables:
 
 ```
-\list
+\dt
 ```
 
 ## What is a schema?
@@ -294,24 +294,30 @@ Not equal - <>
 
 ```
 CREATE TABLE books (book_id SERIAL PRIMARY KEY, name VARCHAR(100), authorId INTEGER);
+
 CREATE TABLE authors (author_id SERIAL PRIMARY KEY, name VARCHAR(100));
 
 INSERT INTO authors (name) values ('Elie');
 INSERT INTO authors (name) values ('Bob');
 
-INSERT INTO books (name, authorId) values ('Book 1', 1);
-INSERT INTO books (name, authorId) values ('Book 1', 2);
+INSERT INTO books (name, author_id) values ('Book 1', 1);
+INSERT INTO books (name, author_id) values ('Book 1', 2);
 
 
-select * from authors join books on authors.author_id = books.authorId ORDER BY author_id ASC;
-
-
-ALTER TABLE books ADD CONSTRAINT author_fk FOREIGN KEY (authorId) REFERENCES authors (author_id) ON DELETE NO ACTION;
+select * from authors join books on authors.author_id = books.author_id ORDER BY author_id ASC;
 
 ALTER TABLE books ADD COLUMN author_id INTEGER;
 
-ALTER TABLE books ADD CONSTRAINT name_of_fk FOREIGN KEY (keyInTable) REFERENCES tableName (id) ON DELETE NO ACTION;
+
+
+ALTER TABLE books ADD CONSTRAINT author_fk FOREIGN KEY (author_id) REFERENCES authors (author_id) ON DELETE NO ACTION;
 ```
+
+Alter Table Command
+
+```
+ALTER TABLE books ADD CONSTRAINT name_of_fk FOREIGN KEY (keyInTable) REFERENCES tableName (id) ON DELETE NO ACTION;
+```	
 
 
 
