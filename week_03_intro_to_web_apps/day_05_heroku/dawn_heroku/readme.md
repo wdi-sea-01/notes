@@ -63,7 +63,7 @@ Sequelize needs special configuration for use on Heroku. We need to modify party
 To make your app aware of the heroku database settings we need to insert a line in `models/index.js` direct after this line...
 
 ```
-var config    = require(__dirname + '/../config/config.json')[env];
+var config = require(__dirname + '/../config/config.json')[env];
 ```
 
 add...
