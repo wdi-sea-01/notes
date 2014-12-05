@@ -8,7 +8,7 @@
 ### To start:
 
 
-1. Create a `Procfile` 
+* Create a `Procfile` 
 	- In terminal, run `touch Procfile`. Must be called with a capitol P
 	- make sure it is named "Procfile" (no extention) 
 	- make sure your Procfile is in the same folder as your app.js file) 
@@ -21,7 +21,7 @@
 app.listen(process.env.PORT || 3000)
 ```
 
-this ensures that when we set the PORT config variable, heroku will run on it (we will set the PORT to 80 for heroku)
+	this ensures that when we set the PORT config variable, heroku will run on it (we will set the PORT to 80 for heroku)
 
 4. Your package.json file is __crucial__ - when you deploy your application, heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use --save. You can always check your package.json to see if you are missing anything. 
 
@@ -46,7 +46,7 @@ git push heroku master
 (this should be done ONLY after you have set up your local database and ran all migrations successfully):
 
 
-1. In terminal, install the add-on for postgres
+* In terminal, install the add-on for postgres
     ``` heroku addons:add heroku-postgresql:dev```
   
 2. Set your NODE_ENV variable to 'production' by running this command in terminal: ```heroku config:set NODE_ENV='production' ``` 
@@ -83,7 +83,7 @@ if(config.use_env_variable){
 ```
 
 
-5. Add and commit your changes using `git commit -am "adding production db"` and then push your changes to heroku using `git push heroku master`
+* Add and commit your changes using `git commit -am "adding production db"` and then push your changes to heroku using `git push heroku master`
 
 6. Now run your migrations by typing in terminal ``` heroku run node_modules/.bin/sequelize db:migrate``` and you should have all your tables set up in a heroku hosted database
 
