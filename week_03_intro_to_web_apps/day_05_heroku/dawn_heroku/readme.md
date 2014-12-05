@@ -1,7 +1,6 @@
 ## Getting set up on Heroku with Node + Sequelize 
 
-
-### Before you do anything...
+### Before you do anything
 1. Make sure you have an account with heroku: https://www.heroku.com/
 
 2. Make sure you have installed the heroku toolbelt - [https://toolbelt.heroku.com/](https://toolbelt.heroku.com/)
