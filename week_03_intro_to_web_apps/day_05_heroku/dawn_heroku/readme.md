@@ -16,30 +16,30 @@
 
 
 
-3. In your `index.js` file, where you get your server started, include the port number in your app.listen function.  Example - 
+* In your `index.js` file, where you get your server started, include the port number in your app.listen function.  Example - 
 ```
 app.listen(process.env.PORT || 3000)
 ```
 
 	this ensures that when we set the PORT config variable, heroku will run on it (we will set the PORT to 80 for heroku)
 
-4. Your package.json file is __crucial__ - when you deploy your application, heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use --save. You can always check your package.json to see if you are missing anything. 
+* Your package.json file is __crucial__ - when you deploy your application, heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use --save. You can always check your package.json to see if you are missing anything. 
 
-5. Create a heroku app via the command line
+* Create a heroku app via the command line
 ```
 heroku apps:create example
 ```
 Where `example` is the name of your app. This will create a url like: `http://example.herokuapp.com`
 
-6. Commit and push all your data at this point.
+* Commit and push all your data at this point.
 
-7. To push to heroku, enter the following command
+* To push to heroku, enter the following command
 ```
 git push heroku master
 ```
 
-9. In terminal after you deploy your app, type in `heroku ps:scale web=1 `
-12. If there are no errors, check out your app by going to the url provided at the end of the push or type in ```heroku open```
+* In terminal after you deploy your app, type in `heroku ps:scale web=1 `
+* If there are no errors, check out your app by going to the url provided at the end of the push or type in ```heroku open```
 
 
 ## Connect a DB with Sequelize
@@ -49,8 +49,8 @@ git push heroku master
 * In terminal, install the add-on for postgres
     ``` heroku addons:add heroku-postgresql:dev```
   
-2. Set your NODE_ENV variable to 'production' by running this command in terminal: ```heroku config:set NODE_ENV='production' ``` 
-3. Make sure your production variables in config.json are set like this
+* Set your NODE_ENV variable to 'production' by running this command in terminal: ```heroku config:set NODE_ENV='production' ``` 
+* Make sure your production variables in config.json are set like this
   
   ```
 "production": {
@@ -85,6 +85,6 @@ if(config.use_env_variable){
 
 * Add and commit your changes using `git commit -am "adding production db"` and then push your changes to heroku using `git push heroku master`
 
-6. Now run your migrations by typing in terminal ``` heroku run node_modules/.bin/sequelize db:migrate``` and you should have all your tables set up in a heroku hosted database
+* Now run your migrations by typing in terminal ``` heroku run node_modules/.bin/sequelize db:migrate``` and you should have all your tables set up in a heroku hosted database
 
-7. Try opening your app now, `heroku open`
+* Try opening your app now, `heroku open`
