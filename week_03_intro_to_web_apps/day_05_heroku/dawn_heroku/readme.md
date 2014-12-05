@@ -19,7 +19,9 @@
 3. In your `index.js` file, where you get your server started, include the port number in your app.listen function.  Example - 
 ```
 app.listen(process.env.PORT || 3000)
-``` - this ensures that when we set the PORT config variable, heroku will run on it (we will set the PORT to 80 for heroku)
+```
+
+this ensures that when we set the PORT config variable, heroku will run on it (we will set the PORT to 80 for heroku)
 
 4. Your package.json file is __crucial__ - when you deploy your application, heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use --save. You can always check your package.json to see if you are missing anything. 
 
