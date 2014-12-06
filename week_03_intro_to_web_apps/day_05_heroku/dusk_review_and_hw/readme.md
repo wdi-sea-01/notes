@@ -1,3 +1,10 @@
+#Review
+
+Reviewed creating an express app from scratch with request module to check if it is cloudy. [See code here](https://github.com/itslenny/IsItCloudy)
+
+
+#Homework
+
 ##Movie database - part 2
 
 
