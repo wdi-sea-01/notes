@@ -17,7 +17,7 @@ app.post('/movies',function(req,res){
 
 ###Delete
 ```
-app.post('/movies',function(req,res){
+app.delete('/movies',function(req,res){
 	//remove the item from the database
 	
 	//send back some data
