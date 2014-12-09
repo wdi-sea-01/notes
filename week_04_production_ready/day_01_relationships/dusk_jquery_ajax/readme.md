@@ -59,3 +59,30 @@ $.ajax({
 ```
 
 see also: [jQuery $.Ajax Documentation](http://api.jquery.com/jquery.ajax/)
+
+
+##Using the data tag
+
+
+
+```
+	<div data-something="a value" class="myDiv"></div>
+```
+
+```
+$('.myDiv').data('something');
+//returns "a value"
+
+```
+
+**Note:** the data attribute does not like capital letters so instead of representing two words like this `data-twoWords` you should do it like this `data-two-words` which you would refer to in javascript using `.data('two-words')`
+
+
+
+##Testing Routes with Postman
+
+[Download Postman from the chrome store](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en)
+
+You can use Postman to check your routes. I advise building your routes POST and DELETE and test them with postman before doing the jQuery / AJAX code.
+
+When doing post be sure to click `x-www-form-urlencoded`
