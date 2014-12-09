@@ -81,6 +81,13 @@ git checkout <branch_name>
 git checkout -b <branch_name>
 ```
 
+**Delete a branch (DANGER!!)**
+
+```
+git branch -d <branch_name>
+```
+
+
 ##Branch Example
 
 **Command**
@@ -154,3 +161,4 @@ Switched to branch 'add_tags_to_watchlist'
 ```
 
 (we are now in the add_tags_to_watchlist branch)
+
