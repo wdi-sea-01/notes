@@ -28,7 +28,7 @@ sqlize model:create --name author --attributes name:string
 When creating a table that will reference another table, use the following format `parentId`, this format is necessary for some of built in methods of Sequelize.
 
 ```
-sqlize model:create --name post --attributes title:string,content:text,authorId:integer`
+sqlize model:create --name post --attributes title:string,content:text,authorId:integer
 ```
 
 ###Adding the Associations
