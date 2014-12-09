@@ -4,6 +4,8 @@ Today you're going to add a new feature to your movie database app. It's up to y
 
 It is highly recommended that you create a branch before adding this feature (see bottom of this document for a git branch recap).
 
+**Important note** the routes, table names, column / attribute names, etc could (probably will) be different in your project depending on how you named your other models / attributes / routes.
+
 **Bonus (if you don't like sleeping)** DO BOTH!!!!!11
 
 
@@ -16,6 +18,16 @@ It is highly recommended that you create a branch before adding this feature (se
 	* Lists all comments for a specific post
 	* Takes 1 url parameter (watch list item id)
 	* Has a form to add a comment associated to that watch list item
+	* Recommended route: /watchlist/:id/comments
+* **Create comments table**
+	* attributes (columns):
+		* comment text
+		* id to reference watch list item
+	* associate to watch list items
+		* watch list item HAS MANY comments
+		* comment BELONGS TO one watch list item
+
+
 
 **Bonus** have the comments button on the watch list page display the number of comments each watch list item has (look in to sequelize eager loading).
 
@@ -31,6 +43,16 @@ Create a tags page
 * **Create Tag page**
 	* Lists all tags in the tags table 
 	* Tags should be clickable and link to the watch list page, but filter the list by movies that have been tagged with that tag.
+* **Create Tags table**
+	* attributes (columns):
+		* tag
+	* associate to watch list items
+		* tag HAS MANY watch list items
+		* watch list item HAS MANY tags
+* **Create join table**
+	* attributes (columns):
+		* tag id
+		* watch list item id
 
 **Bonus 1** sort the tag list by popularity
 
