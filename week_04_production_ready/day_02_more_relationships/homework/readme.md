@@ -81,11 +81,22 @@ git checkout <branch_name>
 git checkout -b <branch_name>
 ```
 
+**Push new branch to github**
+
+```
+git push -u origin <branch_name>
+```
+
+
 **Delete a branch (DANGER!!)**
+
+
 
 ```
 git branch -d <branch_name>
 ```
+
+(Probably don't ever do this. It is permanent)
 
 
 ##Branch Example
@@ -162,3 +173,10 @@ Switched to branch 'add_tags_to_watchlist'
 
 (we are now in the add_tags_to_watchlist branch)
 
+**Command**
+
+```
+git push -u origin add_tags_to_watchlist
+```
+
+The branch was now pushed to github and we set the default push location for this branch to the newly created branch on github. In the future we can just go `git push` and it'll know what to do.
