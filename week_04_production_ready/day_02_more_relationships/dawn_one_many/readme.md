@@ -37,7 +37,7 @@ The following lines need to be inserted into the author and post models respecti
 
 Insert into `models/author.js`
 
-* `models.author.hasMany(model.post)`
+* `models.author.hasMany(models.post)`
 
 Insert into `models/post.js`
 

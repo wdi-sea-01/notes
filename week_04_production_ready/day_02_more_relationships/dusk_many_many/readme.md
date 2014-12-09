@@ -6,11 +6,11 @@ We will be expanding our data model, to include
 
 **Very Important** Name - your models `singular`
 
-`model:create --name tag --attributes name:string`
+`sqlize model:create --name tag --attributes name:string`
 
 **Very Important** Name your join tables as two plural models combined, such as `tacosburritos`
 
-`model:create --name poststags --attributes postId:integer,tagId:integer`
+`sqlize model:create --name poststags --attributes postId:integer,tagId:integer`
 
 ##Update your Validations
 
