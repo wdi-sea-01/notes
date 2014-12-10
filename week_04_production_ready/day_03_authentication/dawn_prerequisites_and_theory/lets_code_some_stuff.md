@@ -23,6 +23,6 @@ The link should be on the movie detail page and link back to the watch list page
 
 ##Middleware
 
-Create a middleware that adds a function `.getParamNames()` to your `req` object. It should use Object.keys to return an array of all params on the current route.
+Create a middleware that adds a parameter `.paramNames` to your `req` object. It should use Object.keys to get an array of all params on the current route.
 
  
