@@ -77,7 +77,7 @@ Then you can retrive the data the same way
 //on another page
 console.log(req.session.lastPage);
 //outputs: /myPage
-
+```
 
 
 ##Encryption
@@ -87,6 +87,7 @@ For password encryption we'll use bcrypt. Bcrypt creates highly secure salted pa
 To use bcrypt in node we need to install / use the bcrypt npm module.
 
 **Install bcrypt**
+
 
 ```
 npm install bcrypt --save
