@@ -45,7 +45,6 @@ add a line under aliases:
 
 ```
 alias fm="foreman run nodemon"
-
 ```
 So you can start your project via `fm` now!
 
