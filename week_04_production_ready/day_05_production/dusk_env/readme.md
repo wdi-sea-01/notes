@@ -18,7 +18,8 @@ food_secret=qwertyuiop1234567890
 ###Ignore this file
 Add the `.env` file to your existing `.gitignore`
 
-```echo ".env" >> .gitignore
+```
+echo ".env" >> .gitignore
 ```
 
 ###Use the `.env` variables in your code
