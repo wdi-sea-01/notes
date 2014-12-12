@@ -35,7 +35,6 @@ or something like
 ```
 var client = new ApiClient({key: process.env.taco)
 ```
-<<<<<<< HEAD
 
 ###What if I don't want to type that?
 We can create an alias so we don't have to type it out every time.
