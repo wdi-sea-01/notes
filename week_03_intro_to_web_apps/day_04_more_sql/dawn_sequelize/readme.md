@@ -105,7 +105,7 @@ Here is an example of a command to generate a User model with a first_name, last
 
 >Make sure you do __not__ have any spaces for each of the attributes and their data types
 
-`sqlize model:create --name User --attributes first_name:string,last_name:string,age:integer`
+`sqlize model:create --name user --attributes first_name:string,last_name:string,age:integer`
 
 
 This will generate the following migration
@@ -114,7 +114,7 @@ This will generate the following migration
 "use strict";
 module.exports = {
   up: function(migration, DataTypes, done) {
-    migration.createTable("Users", {
+    migration.createTable("users", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -152,7 +152,7 @@ And a corresponding model:
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var user = sequelize.define("user", {
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     age: DataTypes.INTEGER
@@ -164,7 +164,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return User;
+  return user;
 };
 
 ```
@@ -179,7 +179,7 @@ Sequelize has a bunch of validations we can add to our models to ensure that our
 
 ```
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var user = sequelize.define("user", {
  
 
     email: {
@@ -198,7 +198,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return User;
+  return user;
 };
 ```
 
@@ -213,7 +213,7 @@ Whenever we generate a migration, we have to run the migration to execute the `u
 [create](http://sequelizejs.com/docs/latest/instances#create)
 
 ```
-db.User.create({ first_name: 'Anil', last_name: 'Bridgpal', age: 99 }).then(function(data) {
+db.user.create({ first_name: 'Anil', last_name: 'Bridgpal', age: 99 }).then(function(data) {
   // you can now access the newly created task via the variable data
 })
 ```
@@ -223,7 +223,7 @@ db.User.create({ first_name: 'Anil', last_name: 'Bridgpal', age: 99 }).then(func
 [find](http://sequelizejs.com/docs/latest/models#finders-find)
 
 ```
-db.User.find(1).then(function(user) {
+db.user.find(1).then(function(user) {
   // user will be an instance of User and stores the content of the table entry with id 1. if such an entry is not defined you will get null
 })
 ```
@@ -234,17 +234,17 @@ db.User.find(1).then(function(user) {
 The methodfindOrCreate can be used to check if a certain element is already existing in the database. If that is the case the method will result in a respective instance. If the element does not yet exist, it will be created.
 
 ```
-db.User
+db.user
   .findOrCreate({ first_name: 'Anil' })
-  .then(function(user) {
-    console.log(user.values) // returns info about the user
+  .spread(function(user, created) {
+    console.log(user) // returns info about the user
   })
 ```
 
 [findAll](http://sequelizejs.com/docs/latest/models#finders-findall)
 
 ```
-db.User.findAll().then(function(users) {
+db.user.findAll().then(function(users) {
   // users will be an array of all User instances
 })
 ```
@@ -256,16 +256,16 @@ db.User.findAll().then(function(users) {
 ```
 // way 1
 
-db.User.find({ where: { first_name: 'Anil' } }).then(function(user){
+db.user.find({ where: { first_name: 'Anil' } }).then(function(user){
   user.first_name = 'Taco'
-  task.save().success(function() {});
+  task.save().then(function() {});
 })
 
 // way 2
-db.User.find({ where: { first_name: 'Anil' } }).then(function(user){
+db.user.find({ where: { first_name: 'Anil' } }).then(function(user){
   user.updateAttributes({
   first_name: 'Taco'
-  }).success(function() {})
+  }).then(function() {})
 })
 
 ```
@@ -275,38 +275,36 @@ db.User.find({ where: { first_name: 'Anil' } }).then(function(user){
 [destroy](http://sequelizejs.com/docs/latest/instances#destroy)
 
 ```
-db.User.find({ where: { first_name: 'Anil' } }).then(function(user){
+db.user.find({ where: { first_name: 'Anil' } }).then(function(user){
   user.destroy().success(function() {})
 })
 ```
 
-## Listeners + Callbacks
+##Promises
+After a sequelize statement, we can interact with the return of that object using `.then` and in `findOrCreate` we will use `spread`
 
-When you make a request
-
-These are all the same for success handling. The `.success`, `.done`, and `.error` syntax may throw warnings, as they are being deprecated.
-
-Try to use `.then` or `.done`
+Finding a user
 
 ```
-// each one is valid
-Model.findAll().on('success', function(data) {})
-Model.findAll().success(function(data) { })
-Model.findAll().ok(function(data) { })
+db.user.find(1)
 ```
 
-These are all the same for error handling
+This will execute a statement to find a user, but it will not let us interact with it. Because of the asyncrous nature of a call, we need to use a Promise (a type of callback) to get that data.
 
 ```
-Model.findAll().on('error', function(err) { })
-Model.findAll().error(function(err) { })
-Model.findAll().failure(function(err) {  })
-Model.findAll().fail(function(err) {  })
+db.user.find(1).then((function(foundUser) {
+	console.log(foundUser);
+	//res.send("myTemplate", {user: foundUser)
+})
 ```
 
-These are all the same when you want one event to contain both the error and success information.
+in a `findOrCreate`, a callback will return back an array, instead of a single object. There is a type of callback called `.spread` which will allow us to break apart that array and use similar to a traditional callback.
+
 
 ```
-Model.findAll().complete(function(err, result) { /* bar */ })
-Model.findAll().done(function(err, result) { /* bar */ })
+db.user
+  .findOrCreate({ first_name: 'Anil' })
+  .spread(function(user, created) {
+    console.log(user) // returns info about the user
+  })
 ```
