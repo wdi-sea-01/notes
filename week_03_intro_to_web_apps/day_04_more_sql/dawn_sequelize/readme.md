@@ -19,7 +19,7 @@ From the Sequelize docs "To put it in a nutshell, it's an ORM (Object-Relational
 
 #### Model
 
-A model is a class that maps to the data relation (table) and potentially bridges tables. You can think of a model as the blueprint (class) for what each row of data is going to contain. Unlike a migration, you perform CRUD on instances of your models.
+A model is a class that maps to the data relation (table) and potentially bridges tables. You can think of a model as the blueprint for what each row of data is going to contain. Unlike a migration, you perform CRUD on instances of your models.
 
 #### Migration
 
@@ -70,7 +70,20 @@ Create a database and initialize a sequelize project
 
 ### Setup part 3 - config.json, models and migrations:
 
-In sublime we should now see a bunch of new folders. We now have config, migrations and models. This was created for us when we ran `sqlize init`. Let's start in the config folder and open up the config.json file. This file contains information about the database we are using as well as how to connect. We have three settings, one for development (what we will use now), test(for testing our code), and production(when we deploy our app on AWS/Heroku). Let's change the config.json so it looks like this (we will not be using the test or production environments, so just ignore those for now - all that matters is "development").
+In sublime we should now see a bunch of new folders. We now have config, migrations and models. This was created for us when we ran `sqlize init`.
+
+ Let's start in the config folder and open up the config.json file. This file contains information about the database we are using as well as how to connect. 
+ 
+ We have three settings, one for development (what we will use now), test(for testing our code), and production(when we deploy our app on AWS/Heroku).
+ 
+ Let's change the config.json so it looks like this (we will not be using the test or production environments, so just ignore those for now - all that matters is "development").
+
+The only thing we are actually changing for database setup, is the **database name**. There is no password or username necessary when using it in conjunction with postgress.app, so those lines are removed.
+
+The only section that we actually use for this part of the class is the `development` portion.
+
+When we deploy to Heroku, they will provide us a long url that contains password and login that will be secure when deployed. More on this later.
+
 
 ```
 {
@@ -80,7 +93,7 @@ In sublime we should now see a bunch of new folders. We now have config, migrati
     "dialect": "postgres"
   },
   "test": {
-    "database": "database_test",
+    "database": "firstapp",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
