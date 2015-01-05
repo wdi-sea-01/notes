@@ -24,7 +24,7 @@
 #### Examples
 
 We will convert the examples from our
-[JavaScript Control Flow lesson](https://github.com/wdi-sf-fall/notes/blob/master/week_01_fundamentals/day_3_intro_to_javascript/dusk_control_flow_and_functions/control_flow.md)
+[JavaScript Control Flow lesson](https://github.com/wdi-sea-01/notes/blob/master/week_01_fundamentals%2Fday_02_intro_to_js%2Fdusk_js_control_flow%2Freadme.md)
 
 ##### If/Else #####
 
@@ -122,7 +122,7 @@ We will convert the examples from our
 #### Examples
 
 Convert several examples from our
-[JavaScript Functions lesson](https://github.com/wdi-sf-fall/notes/blob/master/week_01_fundamentals/day_3_intro_to_javascript/dusk_control_flow_and_functions/functions.md#javascript-functions)
+[JavaScript Functions lesson](https://github.com/wdi-sea-01/notes/blob/master/week_01_fundamentals%2Fday_03_functions%2Fdusk_js_functions%2Freadme.md)
 
 ##### Syntax #####
 
