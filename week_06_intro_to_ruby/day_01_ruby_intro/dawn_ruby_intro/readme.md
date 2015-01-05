@@ -1,281 +1,191 @@
-# Intro To Ruby
-## Control Flow and Methods
-
-
-| Objectives |
-|:--- |
-| ... identify control flow patterns and functions in JS and utilize them in Ruby |
-| ... apply control flow to create command line applications |
-| ... apply methods in ruby to solve problems |
-
-
-## Intro to the week
-
-Before we move into ruby it's important to revisit how we learned our first language and use that to organize our study of our new language. Learning our second programming language is a process of translating expressions, patterns, and concepts from our familiar language into our new langauge. However, learning our first language involved more identification and comprehension of knowledge required to implement our first programs. We should really begin by organizing this knowledge to build a better understanding before we transition.
-
-## Think-Pair-Share
-* What is javascript? What does it look like?
-* What were some of the primitives in javascript? (Syntactic things. Think things like variable declaration, conditionals, functions, etc)
-* How did we use javascript to build things? What sort of ways did we build up from the fundementals of the language?
-* What could possibly be different in another language? How could we change the syntax, but keep the semantics?
-
-### Types of Knowledge
-
-* Imperative knowledge
-> your "how to" knowledge, i.e. describing how to do something
-* Declarative knowledge
-> your "what is" knowledge. i.e. describing what something is.
-
-### Parts of A Language
-
-* `Primitives`
-* `Combinations`
-* `Abstractions`
-
-
-### Ruby vs. JS Primitives
-
-Let's recall some of our JS Data Types
-
-
-#### Javascript
-
-* `null`, `undefined`
-* Strings
-* Booleans
-* Number
-  * `.toString`
-* Arrays
-  `indexOf`,`splice`, `slice`
-* Objects
-  * `["some_key"]`, `.some_key`
-* operators
-  * `==`, `===`, `>`, `>=`, ..
-  * `!`, `||`, `&&`
-  * `+`, `-`, `/`, `*`
-* Console methods
-  * `console.log`
-  * `prompt`
-
-#### Ruby
-
-* `nil`
-* Integers
-  * Fixnum
-  * Bignum
-   * `to_s`
-* Floats
-* Strings
-  * `.to_i` and `.to_f` `*INTEGER`
-* Symbols
-* Ranges
-* Booleans
-* Arrays
-  * `[x..y]`, `[x...y]`, `index`
-* Hashes
-  * `{ key => value }`
-  * `{ key: value }` which is the same as `{:key =>value }`
-  * `[some_key]` and `[some_key]=`
-  * `key`,`.keys`, `.each`
-* operators
-  * `++`, `--`, `||=`, `*=`, `/=`
-  * `==`, `.equal?`,
-  * `!`, `not`, `||`, `&&`
-  * **`**`**, `+`, `-`, `/`, `*`,
-* General Delimited Input
-  * `%w`, `%r`
-* Console Methods
-  * `puts`, `p`
-  * `gets` and `gets.chomp`
-
-### Control flow
-
-
-#### Javascript ([Some Control Flow Structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Statements))
-
-* Conditionals
-  * `if`, `else if`, `else`, `switch`, ...
-* Loops
-  * `do-while`, `while`,  ...
-* iterators,
-  * `for-in`
-* Exceptions
-  * `try`, `catch`
-
-#### Ruby ([Some Control Flow Structures](http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Control_Structures))
-
-* Conditionals
-  * `if`, `elsif`, `else`, `unless`, `case when else` ...
-* Loops
-  * `until`, `while`, `times` ...
-* iterators,
-  * `.each`, `for ... in`
-* Exceptions
-  *  `begin`, `rescue`, `ensure`
-
-
-### Some Abstractions
-
-#### Javascript
-
-* Function
-  * Anonymous: `function (param1, [..param2, [...]]){...}`,
-  * Named: `function Name(param1, [..param2, [...]]){...}`
-  * Uses lexical scope
-  * Used as values
-  * require explicit return
-  * all `params` are optional
-
-#### Ruby
-
- * Function
-  * uses `def`
-  * Do not capture scope
-  * Not used as values
-  * optional parameters must be specified
-  * implicitly returns last evaluation
-
-* block
-  * used with `.each`, `.map`, et cetera
-
-  ```
-  some_method do |param1, [param2, [...]]
-    # some code
-  end
-
-  ```
-  * captures scope
-
 #Intro to Ruby
 
-#### Define a method
 
-```ruby
-def say_hello
-  puts "Hello"
-end
 
-say_hello
+##Humble Origins
+Ruby is an object-oriented language suitable for writing day to day scripts as well as full-scale applications. Matz began work on Ruby back in 1993, because he wanted a language that made him productive while being fun to use. Initially popular in Japan, Ruby has been finding its way into the hearts of programmers all over the world.
+
+* Ruby stylistically conforms to the **snake_case** convention
+* The [documentation](http://ruby-doc.org/) is fantastic
+
+Further reading: [The Philosophy of Ruby](http://www.artima.com/intv/ruby.html)
+###Yukihiro Matsumoto
+![Matz-san](http://image.gihyo.co.jp/assets/images/dev/serial/01/software_designers/0034/0034-01.JPG "Yukihiro Matsumoto")
+
+##Core Language Components
+* Objects
+* Classes
+* Primatives
+* Operators
+* Conditionals
+* Enumarables (aka Iterators)
+* Methods (aka Messages)
+
+##Data Types
+
+###Nothingness
+Just as Javascript uses undefined or null, ruby uses **nil**
+
+```
+anUndefinedVariable == nil
+=> true
 ```
 
-#### Define a method with a parameter
+###Booleans
+A bianary representation: either **true** or **false**
 
-```ruby
-def say(something)
-  puts something
-end
+###Integers
+A primative datatype used to represent a number
+* Fixnum
+* Float	
+* Bignum
 
-say('hello')
-say 'gello'
+*conceptualize how an integer inherits it's properties*
+	
+```
+1.class.superclass
+=> Integer
+```
+###Strings
+A primative datatype used to represent a string of characters
+
+*inspect a string's methods*
+
+```
+String.instance_methods(false).sort
 ```
 
-#### Define a method that operates on two parameters
-```ruby
-def add_numbers(first, second)
-  puts first + second
-end
+###Arrays
+An indexed arrangemnet of objects
+*show several ways to create an array*
+	
+```
+arr = [1,2,3]
+=> [1,2,3]
+arr1 = Array.new([4,5,6])
+=> [4,5,6]
+arr2 = Array.new(3, true)
+=> [true, true, true]
+```
+	
+###Ranges
+A set of values with a beginning and an end
 
-add_numbers(1,2)
-add_numbers 1, 2
+```
+aRange = (1..10) # includes 10
+anotherRange = (1...10) # not including 10
+lettersWorkToo = ('a'..'z')
 ```
 
-#### Printing and returning are different
-```ruby
-def add_numbers_quietly(first, second)
-  first + second
-end
+*typecasting in action*
 
-add_numbers_quietly(1,2)
-add_numbers_quietly 1, 2
+```
+rang1.to_a
+=> [1,2,3,4,5,6,7,8,9]
 ```
 
-#### Methods in Ruby always return the value of the last evaluated expression
-```ruby
-def implicitly_return_5
-  if true
-    5
-  end
-end
+###Symbols
+An immutable sequence of characters that represents data stored in a specific memory location.
 
-implicitly_return_5
+```
+country = :turkey
+food = :turkey
+
+country.object_id == food.object_id
+=> true
+
+country = "turkey"
+food = "turkey"
+
+country.object_id == food.object_id
+=> false
 ```
 
-* What was the value of the if statement?
-* `status_of_world = if 1 == 2 then "messed up" else "a-o-k" end`
-* `result = 1 == 2 ? "wuh oh" : "phew"`
+###Hashes
+A hash consists of unindexed key, value pairs. You may construct a hash in either of the following ways.
 
-#### Parameters can have default values
-
-```ruby
-def say(something = "Hello")
-  puts something
-end
-
-say # prints "Hello"
-say "Goodbye" # prints "Goodbye"
 ```
-#### Recursion: methods can call themselves
-
-```ruby
-def recurse(depth)
-  if depth > 0
-    puts "Spiraling down..."
-    recurse(depth - 1)
-    puts "Spiraling up..."
-  else
-    puts "Bottom of the rabbit hole"
-  end
-end
-
-recurse(5)
-recurse 5
+dog = {
+	:name => "Hamlet",
+	:breed => "Pug",
+	:fav_food => "paté"
+}
+cat = {
+	name: "Simba",
+	breed: "American Shorthair",
+	fav_food: "Prosciutto"
+}
+dog[:name]
+=> "Hamlet"
+cat[:fav_food]
+=> "Prosciutto"
 ```
 
-## The biggest difference from javascript
+##Operators
+###Comparators
+* `+`, `-`, `/`, `*`, `**`
 
-#### Functions have locally scoped variables
-The following code wont work. Why?
-```ruby
-foo = 1
+* `+=`, `-=`, `*=`, `/=`, `**=`
 
-def do_stuff
-  foo += 1
-  bar = 1
-  puts foo
-  puts bar
-end
+* `==`, `.equal?`, `!`, `||`, `&&`, `||=`
+	* a ||= b is equivalent to a || a = b
 
-do_stuff
+###General Delimated Input
+Syntactical alternatives for representing datatypes. 
 
-puts foo
-puts bar
+* `%q{a normal "string"}`, `%w{a word array}`
+
+###Mutator methods !
+Mutator methods will not just return a value, but change the object they are called on to that value. Adding ! to certain ruby methods will turn them into their mutator method counterparts.
+
+*How to mutate an array*
+
+```
+arr = [7,4,5]
+arr.sort #not a mutator method
+=> [4,5,7]
+arr
+=> [7,4,5]
+
+arr = [7,4,5]
+arr.sort! #the '!', aka a 'bang' will mutate the object
+=> [4,5,7]
+arr
+=> [4,5,7]
 ```
 
-The problem is the ruby is locally scoped. Meaning that a function only has access to its variables and the variables it defined inside of itself.
+###Typecasting
+Typecasting is the act of altering an object's datatype
 
-```ruby
-foo = 1
+* .to_i
+* .to_s
+* .to_a
+* .to_f
 
-def do_stuff
-  foo = 1
-  foo += 1
-  bar = 1
-  puts foo
-  puts bar
-end
+##Conditionals
+* `if`, `unless`, `else`, `while`, `until`, `when`
 
-do_stuff
+##Code blocks
+Sometimes called closures in other languages is a chunk of contained code. Use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
 
-puts foo
-puts bar
-
-def do_stuff2(x)
-  foo = x
-  foo += 1
-  bar = 1
-  puts foo
-  puts bar
-end
-
-puts do_stuff2(foo)
 ```
+5.times { puts "Hello" }
+
+x = 0
+until x > 10 do	#count to 10
+	puts x
+	x += 1
+end
+
+
+```
+
+##String Interpolation
+Allows one to inlcude a dynamic variable in a string
+
+```
+team = "Giants"
+puts "Go #{team}!"
+=> "Go Giants!"
+```
+`
