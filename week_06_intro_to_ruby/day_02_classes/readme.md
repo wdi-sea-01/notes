@@ -10,7 +10,7 @@ Learning Objectives
 * Understand instance variables and instance methods
 * Understand class variables and class methods
 * Recall the `self` keyword
-* Understand `Protected`, `Private`, and `Public` methods
+* Understand `Private`, and `Public` methods
 * Understand method chaining in a class
 
 
@@ -234,7 +234,7 @@ but this has the unfortunate problem of rename each method when you rename the c
 Also, note that `self` can be used in instance methods to refer to particular *object* in use, i.e. `self.var_name` instead of `@var_name`.
 
 
-### Private and Protected Methods
+### Private Methods
 
 
 If we create a class `Person` with a name attribute and use `attr_accessor` to create the getters and setters as follows
