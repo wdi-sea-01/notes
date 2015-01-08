@@ -21,27 +21,15 @@
 
 
 
-## Moving Away from Sinatra
-
-This week after Monday's lesson on Databases we will be finishing Sinatra. What do we want you to walk away with from Sinatra?
-
-* Handling params in a request
-* Routing a request
-* Presenting a view with erb
-
-If you are familiar with those then you are prepared and will practice them again in Rails. Try not to worry about data or databases when reviewing these notes.
 
 
 ## Why The Rails Workflow and Organization (Bullet)?
 
 In a bullet list, the why is as follows:
 
-* to separate certain aspects found in larger applications <br>
-<img width="100"src="images/separate_concerns.png">
-* to familiarize ourselves with the most common pattern used to design web applications, **Model-View-Controller** <br>
-<img width="100"src="images/mvc_small.png">
-* to facilitate workflow using conventions<br>
-  <img width="100" src="http://www.abnoteblog.com/wp-content/uploads/2011/10/reinventing-the-wheel-300x199.jpg"><br>
+* to separate certain aspects found in larger applications
+* to familiarize ourselves with the most common pattern used to design web applications, **Model-View-Controller**
+* to facilitate workflow using conventions
   *not re-inventing the wheel every time*
 
 ## Need More Why About Code Organization?
