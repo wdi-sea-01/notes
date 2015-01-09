@@ -257,8 +257,7 @@ The command above enters the rails console to play with your application.
 
 To create our first plane model in our database we use our reference the `Plane` class and call the `Plane#create` method to write our plane to our database.
 
-  > Plane.create({name: "x-wing", type: "unknown", description: "top secret"})
-  => #<Plane ....>
+  Plane.create({name: "x-wing", type: "unknown", description: "top secret"})
 
 This will avoid issues later with `index` trying to render planes that aren't there.
 
@@ -316,13 +315,13 @@ Let's create the `app/views/planes/new.html.erb` with a form that the user can u
 
 `app/views/planes/new.html.erb`
 
-  <form action="/planes" method="post">
-    <input type="text" name="plane[name]">
-    <input type="text" name="plane[type]">
-    <textarea name="plane[description]"></textarea>
-
-    <button> Save Plane </button>
-  </form>
+	 <form action="/planes" method="post">
+	   <input type="text" name="plane[name]">
+	   <input type="text" name="plane[type]">
+	   <textarea name="plane[description]"></textarea>
+	
+	   <button> Save Plane </button>
+	 </form>
 
 Note: how we have now defined our next `route`, which is
 
@@ -390,14 +389,14 @@ To even get our rails app to accept our form it needs an `authenticity_token`, w
 
 `app/views/planes/new.html.erb`
 
-  <form action="/planes" method="post">
-    <input type="text" name="plane[name]">
-    <input type="text" name="plane[type]">
-    <textarea name="plane[description]"></textarea>
-    <%= token_tag form_authenticity_token %>
-
-    <button> Save Plane </button>
-  </form>
+	  <form action="/planes" method="post">
+	    <input type="text" name="plane[name]">
+	    <input type="text" name="plane[type]">
+	    <textarea name="plane[description]"></textarea>
+	    <%= token_tag form_authenticity_token %>
+	
+	    <button> Save Plane </button>
+	  </form>
 
 Our form should now submit properly. However, we will see that rails makes handling all the things required in a form easier using something called *form helpers* later.
 
@@ -663,14 +662,14 @@ We begin with handling the request from a client for an edit page.
 
   `app/views/planes/edit.html.erb`
 
-    <form action="/planes" method="post">
-      <input type="text" name="plane[name]" value="<%= @plane.name %>">
-      <input type="text" name="plane[type]" value="<%= @plane.type %>">
-      <textarea name="plane[description]" value="<%= @plane.description %>"></textarea>
-      <%= token_tag form_authenticity_token %>
-
-      <button> Update Plane </button>
-    </form>
+	    <form action="/planes" method="post">
+	      <input type="text" name="plane[name]" value="<%= @plane.name %>">
+	      <input type="text" name="plane[type]" value="<%= @plane.type %>">
+	      <textarea name="plane[description]" value="<%= @plane.description %>"></textarea>
+	      <%= token_tag form_authenticity_token %>
+	
+	      <button> Update Plane </button>
+	    </form>
 
 * Next we have to modify the `action` and `method`, but we can't explicitly change the method at the top of the form, because the browser still needs to send a `POST` request. Instead we add field that contains the method we actually want to make, `PUT`.  Using something as follows
 
@@ -738,21 +737,21 @@ The only difference now is that we will need to use the `id` of the object being
 
   `app/controllers/planes_controller.rb`
 
-    PlanesController < ApplicationController
-
-      ...
-
-      def update
-        plane_id = params[:id]
-        plane = Plane.find(plane_id)
-
-        # get updated data
-        updated_attributes = params.require(:plane).permit(:name, :type, :description)
-        # update the plane
-        plane.update_attributes(updated_attributes)
-
-        #redirect to show
-        redirect_to "/posts/#{plane_id}"
-      end
-
-    end
+	    PlanesController < ApplicationController
+	
+	      ...
+	
+	      def update
+	        plane_id = params[:id]
+	        plane = Plane.find(plane_id)
+	
+	        # get updated data
+	        updated_attributes = params.require(:plane).permit(:name, :type, :description)
+	        # update the plane
+	        plane.update_attributes(updated_attributes)
+	
+	        #redirect to show
+	        redirect_to "/posts/#{plane_id}"
+	      end
+	
+	    end
