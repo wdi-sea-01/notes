@@ -46,12 +46,20 @@ Add validations to your creature model.
     * be between 10 and 255 characters
 
 
+##More creature info - BONUS
+
+Use the rest-client gem to interact with the public reddit api and load results related to your creature and display them (with links) on your `creature#show` page.
+
+
 ##Resources
 
-* [Flickraw gem](https://github.com/hanklords/flickraw)
-* [Flickraw documentation](http://hanklords.github.io/flickraw/)
-* [Flickr Documentation](https://www.flickr.com/services/api/)
 * [Rails Validations](http://guides.rubyonrails.org/active_record_validations.html)
-
-
-
+* Flickr api
+    * [api example](flickraw.rb)
+    * [Flickraw gem](https://github.com/hanklords/flickraw)
+    * [Flickraw documentation](http://hanklords.github.io/flickraw/)
+    * [Flickr Documentation](https://www.flickr.com/services/api/)
+* Reddit api
+      * [Rest-client gem](https://github.com/rest-client/rest-client)
+      * [api example](reddit.rb)
+      * example url: [http://www.reddit.com/search.json?q=snail&limit=5](http://www.reddit.com/search.json?q=snail&limit=5)
