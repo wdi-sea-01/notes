@@ -6,7 +6,7 @@ angular.module('image-toggle',[])
         scope: { // = @ &
             onImageUrl:'@on',
             offImageUrl:'@off',
-            state:'='
+            state:'=?'
         },
         controller: ['$scope','$element',function($scope,$element){
             $scope.toggleState=function(){
