@@ -23,6 +23,12 @@ angular.module('image-toggle',[])
 });
 ```
 
+##Loading directive in your app
+
+```javascript
+var myApp = angular.module('MyApp',['image-toggle']);
+```
+
 For details on how to initlize the directive see the [Angular Directives Docs](https://docs.angularjs.org/guide/directive) and the finished directive `image-toggle.js` which is included in this repository.
 
 
