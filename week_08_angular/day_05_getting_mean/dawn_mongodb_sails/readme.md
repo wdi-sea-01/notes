@@ -1,5 +1,7 @@
 #Intro to MongoDB
 
+(for part 2 of dawn see `intro_to_sails.md`)
+
 MongoDB (short for hu**mongo**us) is the leading NoSQL database. It is a schemaless document based datastore. This means it doesn't have `tables` it instead has `documents`.
 
 Documents are essentially JSON objects so that means that we can stick any data into a document. So one user could have `firstName` and `lastName` fields and another could have a `fullName` field only.
