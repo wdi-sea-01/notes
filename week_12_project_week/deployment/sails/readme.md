@@ -154,3 +154,27 @@ The `-c` flag tells it to drop old data before creating new data. This is just i
 ```
 heroku pg:psql < db.sql
 ```
+
+####Troubleshooting
+
+If you see "Application Error" there should be some error messages on the Heroku logs. First, try using heroku logs and seeing if you can see the issue (should be right before something about "changing state from up to crashed"
+
+If you can't find it you can also try restarting the and quckly running heroku logs until you see the error OR using live logs (with tail) and looking for the error.
+
+View logs
+
+```
+heroku logs
+```
+
+View LIVE logs
+
+```
+heroku logs --tail
+```
+
+Restart
+
+```
+heroku restart
+```
