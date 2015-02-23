@@ -118,6 +118,17 @@ git add -A
 git commit -m "setting up for production"
 git push heroku master
 ```
+####Config values / api keys
+
+Remember to set your api keys on heroku. You have to do a `heroku config:set` for each key in your .env file or .zshrc file.
+
+
+```
+heroku config:set MY_SECRET_KEY=abc123blahblahblahblahstuff
+```
+
+**Remember** it's `KEY=value`  (no quotes or spaces)
+
 
 
 ####Mongo database migration
