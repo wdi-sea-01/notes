@@ -161,19 +161,19 @@ If you see "Application Error" there should be some error messages on the Heroku
 
 If you can't find it you can also try restarting the and quckly running heroku logs until you see the error OR using live logs (with tail) and looking for the error.
 
-View logs
+**View logs**
 
 ```
 heroku logs
 ```
 
-View LIVE logs
+**View LIVE logs**
 
 ```
 heroku logs --tail
 ```
 
-Restart
+**Restart**
 
 ```
 heroku restart
